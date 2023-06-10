@@ -15,7 +15,7 @@ class Image(models.Model):
     )
 
     def __str__(self):
-        return self.description if self.description else self.image.name
+        return self.image.name
 
 
 class Gallery(models.Model):
