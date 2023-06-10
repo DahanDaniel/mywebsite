@@ -1,0 +1,78 @@
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+/* .cover-container {
+  max-width: 42em;
+} */
+
+/* My styles */
+
+.carousel,
+.carousel-item,
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.cover-container {
+  position: relative;
+  /* z-index: 2; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  text-align: center;
+
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 5;
+}

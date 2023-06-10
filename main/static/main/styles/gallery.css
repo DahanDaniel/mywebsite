@@ -1,0 +1,73 @@
+.album {
+    padding: 5rem 0;
+}
+
+.card {
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter .5s ease-in-out;
+    z-index: 1;
+    filter: grayscale(1);
+}
+
+.card:hover .gallery-image {
+    filter: grayscale(0);
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 1;
+}
+
+.card-text {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-group button {
+    transition: background-color .5s ease-in-out;
+}
+
+.btn-group button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+footer {
+    padding: 3rem 0;
+    text-align: center;
+}

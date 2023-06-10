@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'main/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'main/styles/header.css' %}" rel="stylesheet">
+    {% block head %}{% endblock %}
+
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+    {% block content %}
+    {% endblock %}
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'main/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>
