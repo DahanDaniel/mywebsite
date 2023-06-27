@@ -26,14 +26,45 @@
                 {% for image in gallery.images.all %}
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.title }}">
+                        <img class="img-fluid open-modal" src="{{ image.image.url }}" alt="{{ image.title }}"
+                            data-bs-toggle="modal" data-bs-target="#imageModal" data-url="{{ image.image.url }}">
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-
-
 </div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="modalImage" src="" class="img-fluid" alt="Selected Image">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const images = document.querySelectorAll('.open-modal');
+    const modalImage = document.querySelector('#modalImage');
+    const modal = document.querySelector('#imageModal');
+
+    images.forEach(image => {
+        image.addEventListener('click', function () {
+            modalImage.src = this.dataset.url;
+        });
+    });
+
+    modal.addEventListener('click', function (event) {
+        if (event.target !== modalImage) {
+            let bootstrapModal = bootstrap.Modal.getInstance(modal);
+            bootstrapModal.hide();
+        }
+    });
+</script>
 {% endblock %}
